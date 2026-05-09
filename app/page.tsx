@@ -4,9 +4,9 @@ import dynamic from 'next/dynamic'
 import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
 import { Animal } from '@/types'
-import AddAnimalModal from '@/components/AddAnimalModal'
 
 const Map = dynamic(() => import('@/components/Map'), { ssr: false })
+const AddAnimalModal = dynamic(() => import('@/components/AddAnimalModal'), { ssr: false })
 
 export default function Home() {
   const [animals, setAnimals] = useState<Animal[]>([])
